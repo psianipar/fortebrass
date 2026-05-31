@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortebrass | Modern Brass Ensemble</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans tracking-wide">
+
+    <header class="py-24 text-center bg-gradient-to-b from-gray-800 to-gray-900 border-b border-gray-800">
+        <h1 class="text-6xl font-black text-amber-500 tracking-wider">FORTEBRASS</h1>
+        <p class="mt-4 text-xl text-gray-400 max-w-lg mx-auto font-light px-4">
+            A high-energy brass ensemble driving sound through saxophones, trumpets, trombone, drums, and bass.
+        </p>
+        <a href="#booking" class="mt-8 inline-block bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-3 rounded-full transition transform hover:scale-105 shadow-xl">
+            Book the Band
+        </a>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold tracking-tight text-amber-500/90 mb-8 border-b border-gray-800 pb-3">Latest Performances</h2>
+        <div id="video-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <p class="text-gray-500 col-span-full text-center py-12 animate-pulse">Syncing performance catalog...</p>
+        </div>
+    </main>
+
+    <section id="booking" class="bg-gray-800/50 backdrop-blur-md py-16 border-t border-gray-800">
+        <div class="max-w-md mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-100 mb-2">Secure Fortebrass</h2>
+            <p class="text-gray-400 text-center mb-8 text-sm">Drop your event details below to ping the crew.</p>
+            
+            <form action="https://formspree.io/f/xoqorjle" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Contact Name</label>
+                    <input type="text" name="name" required class="w-full bg-gray-900 border border-gray-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-amber-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Email Address</label>
+                    <input type="email" name="email" required class="w-full bg-gray-900 border border-gray-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-amber-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Gig Requirements</label>
+                    <textarea name="details" rows="4" required placeholder="Date, location, and event details..." class="w-full bg-gray-900 border border-gray-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-amber-500 transition text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold py-3 rounded uppercase tracking-wider text-sm transition">
+                    Submit Booking Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center py-12 text-gray-600 text-xs tracking-widest border-t border-gray-800/40">
+        &copy; 2026 FORTEBRASS. RUNS ON AUTOMATION.
+    </footer>
+
+    <script>
+        fetch('./videos.json')
+            .then(res => { if(!res.ok) throw new Error(); return res.json(); })
+            .then(data => {
+                const grid = document.getElementById('video-grid');
+                if(!data || data.length === 0) {
+                    grid.innerHTML = '<p class="text-gray-500 col-span-full text-center py-12">Check back shortly for updates.</p>';
+                    return;
+                }
+                grid.innerHTML = data.map(video => `
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition flex flex-col group">
+                        <a href="${video.link}" target="_blank" class="relative block overflow-hidden aspect-video bg-gray-950">
+                            <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                                <svg class="w-14 h-14 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </a>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <h3 class="font-bold text-md line-clamp-2 text-gray-200 group-hover:text-amber-500 transition duration-200">${video.title}</h3>
+                            <a href="${video.link}" target="_blank" class="mt-4 text-xs text-amber-500/80 font-bold uppercase tracking-wider hover:text-amber-400 flex items-center gap-1">
+                                Watch Video <span>&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+            })
+            .catch(() => {
+                document.getElementById('video-grid').innerHTML = '<p class="text-gray-500 col-span-full text-center py-12">Initial data sync in progress. Live feed will load shortly.</p>';
+            });
+    </script>
+</body>
+</html>
