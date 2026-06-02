@@ -3,19 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fortebrass is a modern brass ministry based in Bekasi, Indonesia, delivering powerful musical performances that evoke the presence of the Holy Spirit through sacred hymns and the resonant power of brass, piano, and organ.">
+    <meta name="keywords" content="brass ministry, sacred music, christian music, worship band, fortebrass, bekasi indonesia, holy spirit, hymns, brass ensemble">
+    <meta name="author" content="Fortebrass">
+    <meta property="og:title" content="Fortebrass | Modern Brass Ministry">
+    <meta property="og:description" content="Experience the power of sacred music through Fortebrass, a modern brass ministry delivering worship performances that connect audiences with the divine.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fortebrass.github.io">
+    <meta property="og:image" content="https://fortebrass.github.io/hero-image.jpg">
+    <meta property="og:site_name" content="Fortebrass">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fortebrass | Modern Brass Ministry">
+    <meta name="twitter:description" content="Experience the power of sacred music through Fortebrass, a modern brass ministry delivering worship performances that connect audiences with the divine.">
+    <meta name="twitter:image" content="https://fortebrass.github.io/hero-image.jpg">
     <title>Fortebrass | Modern Brass Ministry</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
 <body class="bg-gray-900 text-gray-100 font-sans tracking-wide pt-16">
 
     <!-- Sticky Navigation Bar -->
     <nav class="fixed top-0 left-0 right-0 bg-gray-950/80 backdrop-blur-md border-b border-gray-800 z-50">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="text-xl font-black text-amber-500 tracking-wider">FORTEBRASS</a>
-            <div class="flex items-center gap-6">
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <!-- Desktop navigation -->
+            <div class="hidden md:flex items-center gap-6">
                 <a href="#performances" class="text-sm text-gray-300 hover:text-amber-500 transition">Performances</a>
                 <a href="#about" class="text-sm text-gray-300 hover:text-amber-500 transition">Our Foundation</a>
                 <a href="#booking" class="bg-amber-500 hover:bg-amber-600 text-gray-950 text-xs uppercase font-bold px-4 py-2 rounded-full transition">Invite Us</a>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-gray-950/95 backdrop-blur-md border-b border-gray-800">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#performances" class="block text-sm text-gray-300 hover:text-amber-500 transition py-2">Performances</a>
+                <a href="#about" class="block text-sm text-gray-300 hover:text-amber-500 transition py-2">Our Foundation</a>
+                <a href="#booking" class="block text-sm text-gray-300 hover:text-amber-500 transition py-2">Invite Us</a>
             </div>
         </div>
     </nav>
@@ -24,24 +52,24 @@
     <header class="relative py-32 text-center bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.08)_0%,transparent_70%)]"></div>
         
-        <div class="relative z-10 max-w-3xl mx-auto px-6">
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
             <!-- Option 2 Hero Accent -->
             <span class="text-xs font-bold uppercase tracking-widest text-amber-500/80 bg-amber-500/10 px-4 py-1.5 rounded-full">
                 A Harmonious Fusion of Faith and Music Since 2005
             </span>
             
-            <h1 class="text-6xl md:text-7xl font-black text-amber-500 tracking-wider mt-5 drop-shadow-md">FORTEBRASS</h1>
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-amber-500 tracking-wider mt-5 drop-shadow-md">FORTEBRASS</h1>
             
             <!-- Option 2 Slogan -->
-            <p class="mt-6 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+            <p class="mt-6 text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
                 Evoking the presence of the Holy Spirit and inspiring hearts through the profound fusion of sacred hymns and the resonant power of brass, piano, and organ.
             </p>
             
-            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#booking" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-8 py-3.5 rounded-full transition transform hover:scale-105 shadow-xl shadow-amber-500/10 text-center uppercase text-sm tracking-wider">
-                    Contact Us for Your Next Service
+            <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#booking" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-6 py-3 rounded-full transition transform hover:scale-105 shadow-xl shadow-amber-500/10 text-center uppercase text-sm tracking-wider">
+                    Contact Us for Your Next Events
                 </a>
-                <a href="#performances" class="w-full sm:w-auto border border-gray-700 hover:border-gray-500 text-gray-300 font-medium px-8 py-3.5 rounded-full transition text-center text-sm">
+                <a href="#performances" class="w-full sm:w-auto border border-gray-700 hover:border-gray-500 text-gray-300 font-medium px-6 py-3 rounded-full transition text-center text-sm">
                     Watch Live Performances
                 </a>
             </div>
@@ -70,7 +98,7 @@
                 <p class="text-sm text-gray-400 mt-1">Experience the energy and atmosphere of our latest musical offerings.</p>
             </div>
         </div>
-        <div id="video-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <p class="text-gray-500 col-span-full text-center py-12 animate-pulse">Syncing performance catalog...</p>
         </div>
     </main>
@@ -83,7 +111,7 @@
                 <p class="text-gray-400 text-sm">Fill out your contact or event details below to coordinate with our team.</p>
             </div>
             
-            <form action="https://formspree.io/f/xvzynnpy" method="POST" class="space-y-5 bg-gray-900/50 p-8 rounded-2xl border border-gray-800/80 backdrop-blur-sm">
+            <form action="https://formspree.io/f/xvzynnpy" method="POST" class="space-y-5 bg-gray-900/50 p-6 sm:p-8 rounded-2xl border border-gray-800/80 backdrop-blur-sm">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">Name</label>
@@ -117,7 +145,7 @@
                     <textarea name="details" rows="4" required placeholder="Share your vision for the service, location, and how our ensemble can best serve your events..." class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-amber-500 transition text-sm"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold py-3.5 rounded-lg uppercase tracking-wider text-sm transition transform active:scale-98 shadow-lg shadow-amber-500/10">
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold py-3 rounded-lg uppercase tracking-wider text-sm transition transform active:scale-98 shadow-lg shadow-amber-500/10">
                     Submit Invitation Request
                 </button>
             </form>
@@ -125,46 +153,58 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 text-center py-12 text-gray-600 text-xs tracking-widest border-t border-gray-900">
+    <footer class="bg-gray-950 text-center py-12 text-gray-600 text-xs sm:text-sm tracking-widest border-t border-gray-900">
         &copy; 2026 FORTEBRASS. RUNS ON AUTOMATION.
     </footer>
 
     <!-- Async Feed Loader Script -->
     <script>
-        fetch('./videos.json')
-            .then(res => { if(!res.ok) throw new Error(); return res.json(); })
-            .then(data => {
-                const grid = document.getElementById('video-grid');
-                if(!data || data.length === 0) {
-                    grid.innerHTML = '<p class="text-gray-500 col-span-full text-center py-12">Check back shortly for upcoming video releases.</p>';
-                    return;
-                }
-                grid.innerHTML = data.map(video => `
-                    <div class="bg-gray-800/40 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition flex flex-col group shadow-md">
-                        <a href="${video.link}" target="_blank" class="relative block overflow-hidden aspect-video bg-gray-950">
-                            <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-200">
-                                <div class="bg-amber-500 text-gray-950 p-3 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition duration-200">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            fetch('./videos.json')
+                .then(res => { if(!res.ok) throw new Error(); return res.json(); })
+                .then(data => {
+                    const grid = document.getElementById('video-grid');
+                    if(!data || data.length === 0) {
+                        grid.innerHTML = '<p class="text-gray-500 col-span-full text-center py-12">Check back shortly for upcoming video releases.</p>';
+                        return;
+                    }
+                    grid.innerHTML = data.map(video => `
+                        <div class="bg-gray-800/40 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition flex flex-col group shadow-md">
+                            <a href="${video.link}" target="_blank" class="relative block overflow-hidden aspect-video bg-gray-950">
+                                <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-200">
+                                    <div class="bg-amber-500 text-gray-950 p-3 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition duration-200">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <div class="p-5 flex-grow flex flex-col justify-between">
-                            <h3 class="font-bold text-sm line-clamp-2 text-gray-200 group-hover:text-amber-500 transition duration-200">${video.title}</h3>
-                            <a href="${video.link}" target="_blank" class="mt-4 text-xs text-amber-500 font-bold uppercase tracking-wider hover:text-amber-400 flex items-center gap-1.5 self-start">
-                                Watch Video <span>&rarr;</span>
                             </a>
+                            <div class="p-5 flex-grow flex flex-col justify-between">
+                                <h3 class="font-bold text-sm line-clamp-2 text-gray-200 group-hover:text-amber-500 transition duration-200">${video.title}</h3>
+                                <a href="${video.link}" target="_blank" class="mt-4 text-xs text-amber-500 font-bold uppercase tracking-wider hover:text-amber-400 flex items-center gap-1.5 self-start">
+                                    Watch Video <span>&rarr;</span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                `).join('');
-            })
-            .catch(() => {
-                document.getElementById('video-grid').innerHTML = `
-                    <div class="text-center col-span-full py-12">
-                        <p class="text-gray-500 mb-2">Live feed currently syncing.</p>
-                        <a href="https://youtube.com" target="_blank" class="text-xs text-amber-500 underline uppercase tracking-wider font-semibold hover:text-amber-400">View Our YouTube Channel Directly</a>
-                    </div>`;
-            });
+                    `).join('');
+                })
+                .catch(() => {
+                    document.getElementById('video-grid').innerHTML = `
+                        <div class="text-center col-span-full py-12">
+                            <p class="text-gray-500 mb-2">Live feed currently syncing.</p>
+                            <a href="https://youtube.com" target="_blank" class="text-xs text-amber-500 underline uppercase tracking-wider font-semibold hover:text-amber-400">View Our YouTube Channel Directly</a>
+                        </div>`;
+                });
+        });
     </script>
 </body>
 </html>
