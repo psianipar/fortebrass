@@ -2,7 +2,7 @@ name: Automated YouTube Feed Sync
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Fires automatically every day at midnight UTC
+    - cron: '0 13 * * *' # Fires automatically every day at midnight UTC+13 (20:00 WIB JAKARTA)
   workflow_dispatch: # Allows you to press a button to force an instant sync
 
 jobs:
