@@ -2,12 +2,19 @@ name: Automated YouTube Feed Sync
 
 on:
   schedule:
-    - cron: '5 12 * * *' # Fires automatically every day at 12:05 UTC (19:05 WIB JAKARTA)
+    # 12:05 UTC translates exactly to 19:05 WIB (GMT+7)
+    - cron: '5 12 * * *' 
   workflow_dispatch: # Allows you to press a button to force an instant sync
 
 jobs:
   sync-feed:
     runs-on: ubuntu-latest
+    
+    # Setting the environment timezone ensures your Python script 
+    # evaluates dates/times in Jakarta time as well.
+    env:
+      TZ: 'Asia/Jakarta'
+      
     permissions:
       contents: write # Allows the automated runner to save updates back to your repo
       
