@@ -3,7 +3,7 @@ name: Automated YouTube Feed Sync
 on:
   schedule:
     # 12:05 UTC translates exactly to 19:05 WIB (GMT+7)
-    - cron: '5 7 * * *' 
+    - cron: '5 9 * * *' 
   workflow_dispatch: # Allows you to press a button to force an instant sync
 
 jobs:
